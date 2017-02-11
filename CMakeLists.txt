@@ -121,7 +121,9 @@ add_executable(xmr-stak-amd
 )
 set(EXECUTABLE_OUTPUT_PATH "bin")
 target_link_libraries(xmr-stak-amd ${LIBS} xmr-stak-amd-c)
-
+if(${MINGW})
+    target_link_libraries(xmr-stak-amd ws2_32)
+endif()
 ################################################################################
 # Install
 ################################################################################
