@@ -19,7 +19,7 @@
 #include <memory.h>
 #include <stdio.h>
 
-#ifdef __GNUC__
+#if defined __GNUC__ && !defined _WIN32
 #include <x86intrin.h>
 static inline uint64_t _umul128(uint64_t a, uint64_t b, uint64_t* hi)
 {
